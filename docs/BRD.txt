@@ -1,0 +1,71 @@
+Business Requirements Document (BRD)
+Project Name: Learning Platform with Smart Study Planner (LMS)
+
+1. Project Overview
+The Smart Study Planner is a comprehensive Learning Management System (LMS) designed to help students and professionals organize their learning journey. Unlike traditional planners that only track tasks, this platform allows users to organize courses, schedule daily study tasks, and directly consume learning materials (videos, notes, and official documentation) without leaving the platform.
+
+2. Objectives
+- To provide a centralized dashboard for tracking overall academic or professional learning progress.
+- To enable users to create customized study plans with deadlines.
+- To reduce distractions by integrating study materials (YouTube videos, text notes, and external links) directly into the platform.
+- To offer an intuitive, visually appealing, and highly responsive user interface.
+
+3. Target Audience
+- Students (School/College): Managing multiple subjects, assignments, and exam preparations.
+- Self-Taught Developers/Professionals: Tracking online courses, bootcamps, and upskilling resources.
+- Educators/Mentors: Creating structured learning paths for their mentees.
+
+4. Scope of the Project
+The project encompasses a full-stack web application with secure user authentication, CRUD operations for courses and tasks, interactive progress tracking, and embedded media support.
+
+5. Functional Requirements
+
+5.1 User Authentication & Authorization
+- Registration & Login: Users must be able to create an account using an email and password.
+- Session Management: Secure access to the platform using JWT (JSON Web Tokens). Protected routes must ensure that unauthenticated users are redirected to the login page.
+- Profile Management: Users can update their name, email, and password.
+
+5.2 Dashboard & Analytics
+- Overview Metrics: Display total active courses, pending tasks, and overall platform progress.
+- Deadline Reminders: A dynamic alert system to highlight tasks that are overdue or due today.
+- Quick Access: Easy navigation to recent courses and the daily planner.
+
+5.3 Course Management
+- Course Creation: Users can add custom courses, assign titles, and choose distinct theme colors for visual organization.
+- Progress Tracking: Each course must display a dynamic progress bar calculated based on the completion status of its associated study materials.
+- Course Deletion: Users can safely remove courses (which cascades to remove associated tasks and materials).
+
+5.4 Integrated Study Materials (Core Feature)
+- Material Types: Support for three types of materials:
+  1. Text/Notes: Rich text or Markdown format for pasting study notes.
+  2. Video: YouTube URLs that automatically convert into embedded, playable iframes within the app.
+  3. Official Links: External URLs to official documentation with quick-access buttons.
+- Learning Interface: A distraction-free UI to consume materials.
+- Completion Tracking: Users can mark individual materials as 'Completed', which directly impacts the overarching course progress percentage.
+
+5.5 Daily Planner & Task Management
+- Task Creation: Users can create actionable tasks linked to specific courses and set deadlines.
+- Filtering: The planner must filter tasks by "Today" and "Overdue" to help users prioritize.
+- Status Toggling: One-click toggling between 'Pending' and 'Completed' states.
+
+6. Non-Functional Requirements
+
+6.1 Technology Stack
+- Frontend: React.js, Tailwind CSS (Glassmorphism UI), Framer Motion (Animations), React Router DOM, Lucide React (Icons).
+- Backend: Node.js, Express.js.
+- Database: MongoDB (using Mongoose ORM).
+- Security: Bcrypt.js (Password Hashing), JSON Web Tokens (JWT).
+
+6.2 Performance & UI/UX
+- Responsiveness: The application must be fully responsive across mobile, tablet, and desktop devices.
+- Aesthetics: Adhere to a premium dark-themed "glassmorphism" aesthetic with smooth micro-animations for user interactions.
+- Optimistic UI Updates: UI elements (like checkboxes and progress bars) should update instantly to provide a snappy user experience.
+
+6.3 Security
+- Passwords must be securely hashed before being stored in the database.
+- APIs must be protected; users can only access, modify, or delete their own data.
+
+7. Future Enhancements (Phase 2)
+1. Push Notifications: Email or browser notifications for upcoming task deadlines.
+2. Community/Social Features: Ability to share course material lists or study plans with other users.
+3. Pomodoro Timer: An integrated timer on the Course Detail page to track actual study time.

@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-primary-500: #6366f1; /* Indigo 500 */
+  --color-primary-600: #4f46e5; /* Indigo 600 */
+  --color-dark-900: #0f172a; /* Slate 900 */
+  --color-dark-800: #1e293b; /* Slate 800 */
+  --color-dark-700: #334155; /* Slate 700 */
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f172a] text-slate-200 antialiased font-sans selection:bg-primary-500 selection:text-white;
+    min-height: 100vh;
+  }
+}
+
+/* Custom utilities for glassmorphism */
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+  
+  .glass-input {
+    @apply bg-white/5 border border-white/10 rounded-lg pr-4 py-3 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300;
+  }
+}
